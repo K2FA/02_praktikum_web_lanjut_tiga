@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,7 @@ Route::prefix('daftar')->group(function(){
         echo 'Halaman ini menampilkan Kunjungan industri page';
     });
 });
+Route::get('/about', function(){
+    return view('About');
+});
+Route::resource('/contact-us', ContactController::class, ['only' => ['index', 'create', 'store']]);
