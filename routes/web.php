@@ -33,3 +33,20 @@ Route::prefix('category')->group(function(){
         echo 'Halaman ini menampilkan Kolak Kids Songs Page';
     });
 });
+Route::get('/news',function(){
+    echo 'Ini Merupakan Halaman berita';
+});
+Route::get('/news/{id}', function($id){
+    echo 'Ini Halaman berita tentang '.$id;
+});
+Route::prefix('daftar')->group(function(){
+    Route::get('/karir', function(){
+        echo 'Halaman ini menampilkan Karir page';
+    });
+    Route::get('/magang', function(){
+        echo 'Halaman ini menampilkan Magang page';
+    });
+    Route::get('/kunjungan-industri', function(){
+        echo 'Halaman ini menampilkan Kunjungan industri page';
+    });
+});
